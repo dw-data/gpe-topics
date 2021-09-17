@@ -6,7 +6,7 @@ Data analysis and visualization: [Gianna Grün](https://twitter.com/giannagruen)
 
 Writing: [Peter Hille](https://twitter.com/peterhille) & [Gianna Grün](https://twitter.com/giannagruen)
 
-You can read the story in [English]() and [German]().
+You can read the story in [English](https://www.dw.com/en/how-german-parliament-debated-the-big-crises-of-the-merkel-era/a-59201297) and [German](https://www.dw.com/de/die-gro%C3%9Fen-krisen-der-merkel-%C3%A4ra/a-59188829).
 
 
 # Data Source
@@ -74,7 +74,7 @@ To get rid of **stop words**, like "that's why" or "because", we used [this list
 
 Lastly, we added a **stemmer** to our count vectorizer, to reduce words to their word stems and counting xyz as one word instead of as three.
 
-We introduced a cut at a minimum of 6 occurrences in the overall corpus, which reflects the threshold for the third quartile (75% of identified word stems had less than 6 occurrences).
+We introduced a cut at a minimum of 5 occurrences in the overall corpus, which reflects the threshold for the third quartile (75% of identified word stems had less than 5 occurrences).
 
 This led to a list of ~ 90,000 word stems plus their occurrences. 
 
@@ -110,7 +110,7 @@ Each topic word was assigned an area: foreign policy, domestic policy or other (
 
 ### Detailed clusters: climate, migration, finance, foreign relations
 
-Next, only the topic words from the foreign policy theatre were grouped into more granular topic clusters. The resulting overview can be found [here]().
+Next, only the topic words from the foreign policy theatre were grouped into more granular topic clusters. The resulting overview can be found [here](data/TopicWords-Clustered.csv).
 
 For the first chart we created an overall ranking of topic clusters, counting all-time mentions.
 
@@ -118,7 +118,7 @@ For each of the topic cluster, we produced an additional chart, showing the deve
 
 For this, we first calculated the term frequency per 100,000 words (mentions of a topic per session / all words per session * 100000); however, we noticed in a second step that the absolute mentions (mentions of a topic per session) does not lead to a significantly different picture, which is why we opted to use this representation in the article rather than the relative term frequency, given that it is both easier to communicate as well as to understand.
 
-**Note:** For the charts over time, we made the choice not to plot all topics within one cluster, but only selected ones of interest. Furthermore, we accumulated mentions of several terms behind each label: "climate change" does not only track the mentions of climate change, but also synonyms like "climate crisis" for example, whereas for "Turkey" we'd also count "Ankara" and "Erdogan". You can find a list which topics were aggregated under which label [here]().
+**Note:** For the charts over time, we made the choice not to plot all topics within one cluster, but only selected ones of interest. Furthermore, we accumulated mentions of several terms behind each label: "climate change" does not only track the mentions of climate change, but also synonyms like "climate crisis" for example, whereas for "Turkey" we'd also count "Ankara" and "Erdogan". You can find a list which topics were aggregated under which label [here](data/TopicCluster-Labels.csv).
 
 # Questions and feedback
 
