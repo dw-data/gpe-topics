@@ -22,7 +22,7 @@ There are two main advantages for the 19th term data:
 
 - it's easy to attribute each speaking contribution to a speaker, who also already come with a party attribution
 
-[example image of xml file]
+![](img/xmlfile19.png)
 
 The protocol-xmls were then converted to a dataframe where each protocol is a row, and individual columns for session date, protocol number (for reference), and protocol text.
 
@@ -30,7 +30,7 @@ The protocol-xmls were then converted to a dataframe where each protocol is a ro
 
 Although the protocols of the 16th to 19th parliamentary term are *saved* in an xml file format, they are largely not formatted as an xml file. They contain a basic `head` (10 lines), but the rest is formatted as pure text.
 
-[example image of xml file]
+![](img/xmlfile18.png)
 
 Thus, the two main advantages of the 19th term data don't hold true here: in the raw data, it's very difficult for a computer algorithm to access speaking contrubtions only and attribute them to the adequate speaker.
 
@@ -50,6 +50,8 @@ As a final step, both dataframes - one containing the 19th term protocol and the
 ### Caveats
 
 We checked whether corpus length was roughly similar between sessions, comparing the "old" file-format (dark blue) with the "new" file-format (ligth blue). While the corpus length looks shorter visually for 19th term sessions, the median corpus length is actually longer (median of 408K characters per session) than for 18th term sessions (median of 356K characters per session).
+
+![](img/Term_Comparison.png)
 
 The fact that older protocols appear shorter in character length is somewhat expectable, given that with regular expressions, we can only account for patterns we identified, but there's but there is a chance there were text formatting patterns we missed. Furthermore we noticed that three protocols could not be processed.
 
