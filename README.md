@@ -72,9 +72,9 @@ While searching for specific terms was a good first indication, it comes with th
 
 To address and circumvent this, we implemented a **count vectorizer** that would identify every word in the corpus as well as its occurrence.
 
-To get rid of **stop words**, like "that's why" or "because", we used [this list]() to filter out meaningless words before implementing the count vectorizer again.
+To get rid of **stop words**, like "that's why" or "because", we used [this list](http://snowball.tartarus.org/algorithms/german/stop.txt) to filter out meaningless words before implementing the count vectorizer again.
 
-Lastly, we added a **stemmer** to our count vectorizer, to reduce words to their word stems and counting xyz as one word instead of as three.
+Lastly, we added a [**stemmer**](https://snowballstem.org/) to our count vectorizer, to reduce words to their word stems and counting xyz as one word instead of as three.
 
 We introduced a cut at a minimum of 5 occurrences in the overall corpus, which reflects the threshold for the third quartile (75% of identified word stems had less than 5 occurrences).
 
@@ -82,7 +82,7 @@ This led to a list of ~ 90,000 word stems plus their occurrences.
 
 ### Caveats 
 
-Scanning through this list of word stems, we realized that the stemmer wasn't as good as we hoped for German, cutting words at special characters like `ü`, `ä`, `ö`, `ß` - despite the stemmer's documentation outlining that it should be able to transform it to their equivalents `ue`, `ae`, `oe`, `ss`. 
+Scanning through this list of word stems, we realized that the stemmer wasn't as good as we hoped for German, cutting words at special characters like `ü`, `ä`, `ö`, `ß` - despite the stemmer's [documentation](https://snowballstem.org/algorithms/german2/stemmer.html) outlining that it should be able to transform it to their equivalents `ue`, `ae`, `oe`, `ss`. 
 
 Additionally we noticed that some inconsistencies - ie identical stems listed twice in the word stem list, pointing at additional reasons the computer algorithm perceiving them as individual rather than identical words (like different character encodings).
 
